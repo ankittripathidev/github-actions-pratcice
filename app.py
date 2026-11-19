@@ -1,5 +1,6 @@
 # This code is from https://github.com/ankittripathidev/flask-app-ec2.git
 from flask import Flask, render_template
+
 app = Flask(__name__)
 
 @app.route('/')
