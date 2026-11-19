@@ -11,14 +11,14 @@ jobs:
         run: echo "Cloning the Code"
 
   build:
-    needs: code
+    needs: [code]
     runs-on: ubuntu-latest
     steps:
       - name: Build Image 
         run: echo "Building Docker Image"
 
   test:
-    needs: build
+    needs: [build]
     runs-on: ubuntu-latest
     steps:
       - name: Testing the Code
