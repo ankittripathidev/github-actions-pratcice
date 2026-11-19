@@ -1,0 +1,28 @@
+name: Auto Linter
+
+on:
+  push:
+    paths: "*.py"
+
+jobs:
+  code:
+    runs-on: ubuntu-latest
+    
+    steps:
+      # 1. Check out your repository code
+      - name: Checkout Code/Clone the code
+        uses: actions/checkout@v7
+
+      # 2. Install Python
+      - name: Setup Python
+        uses: actions/setup-python@v7
+        with:
+          python-version: '3.13'
+
+      # 3. Install Linting Tool
+      - name: Install Linter
+        run: pip install ruff
+
+      # 4. Run Linter
+      - name: Check all file for linting
+        run: ruff check .
