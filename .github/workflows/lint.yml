@@ -19,15 +19,10 @@ jobs:
         with:
           python-version: "3.13"
 
-      # Install Linting Tool
-      - name: Install Ruff
-        run: pip install ruff
-
-      # Run Linting Tool
-      - name: Run Ruff Linter
-        run: ruff check .
-
-      # Check Formatting 
-      - name: Check Formatting
-        run: ruff format --check .
+      # Install Ruff & Run Checks
+      - name: Run Ruff Checks
+        run: |
+         pip install ruff
+         ruff check .
+         ruff format --check .
   
