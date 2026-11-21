@@ -1,0 +1,17 @@
+# Workflow Name
+name: CODE
+
+# Triggers On
+on:
+  workflow_call:
+
+# Jobs
+jobs:
+  code-clone:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Code Checkout/Code Clone
+        uses: actions/checkout@v7
+
+      - name: Print Message
+        run: echo "Code Cloned Sucessfully"
