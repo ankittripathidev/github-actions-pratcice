@@ -1,0 +1,33 @@
+name: Auto Linter
+
+on:
+  push:
+    branches:
+      - "**.py"
+
+jobs:
+  code-clone:
+    runs-on: ubuntu-latest
+    steps:
+      # Code Clone
+      - name: Code Checkout/ Code Clone
+        uses: actions/checkout@v7
+
+      # Setup Python
+      - name: Set up Python
+        uses: actions/setup-python@v7
+        with:
+          python-version: "3.13"
+
+      # Install Linting Tool
+      - name: Install Ruff
+        run: pip install ruff
+
+      # Run Linting Tool
+      - name: Run Ruff Linter
+        run: ruff check .
+
+      # Check Formatting 
+      - name: Check Formatting
+        run: ruff format --check .
+  
