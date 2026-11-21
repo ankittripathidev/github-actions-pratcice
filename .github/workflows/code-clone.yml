@@ -1,11 +1,8 @@
-# Workflow Name
 name: CODE
 
-# Triggers On
 on:
   workflow_call:
 
-# Jobs
 jobs:
   code-clone:
     runs-on: ubuntu-latest
