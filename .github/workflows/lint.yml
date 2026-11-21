@@ -2,8 +2,8 @@ name: Auto Linter
 
 on:
   push:
-    branches:
-      - "**.py"
+    paths:
+      - "**/*.py"
 
 jobs:
   code-clone:
